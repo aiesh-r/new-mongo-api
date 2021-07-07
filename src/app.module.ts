@@ -7,15 +7,9 @@ import { UserModule } from './modules/user/user.module';
 
 @Module({
   imports: [
-    // ConfigModule,
-    // MongoDB Connection
-    // MongooseModule.forRootAsync({
-    //   inject: [ConfigService],
-    //   useFactory: async (configService: ConfigService) =>
-    //     configService.getMongoConfig(),
-    // }),
-
-    MongooseModule.forRoot('mongodb://localhost:27017/new_db'),
+    MongooseModule.forRoot('mongodb://localhost:27017/new_db', {
+      useFindAndModify: false,
+    }),
     UserModule,
     // DatabaseModule,
   ],
