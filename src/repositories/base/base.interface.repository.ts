@@ -12,4 +12,5 @@ export interface IBaseRepository<T> {
   remove(filterQuery: FilterQuery<T>): Promise<any>;
 
   update(id: string, data: T | any): Promise<any>;
+  findOneAndUpdate(filterQuery: FilterQuery<T>, user: Partial<T>): Promise<any>;
 }

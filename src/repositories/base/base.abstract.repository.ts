@@ -27,4 +27,11 @@ export abstract class BaseAbstractRepository<T> implements IBaseRepository<T> {
   async update(id: string, data: T | any): Promise<any> {
     return await this.update(id, data);
   }
+
+  async findOneAndUpdate(
+    filterQuery: FilterQuery<T>,
+    user: Partial<T>,
+  ): Promise<any> {
+    return await this.findOneAndUpdate(filterQuery, user);
+  }
 }

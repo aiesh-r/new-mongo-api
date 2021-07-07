@@ -27,8 +27,11 @@ export class UserService {
     updateUserDto: UpdateUserDto,
   ): Promise<User> {
     // return await this.userRepository.findOneAndUpdate({ _id: id }, user);
-    const uId = Number(id);
-    return await this.userRepository.update(id, updateUserDto);
+
+    return await this.userRepository.findOneAndUpdate(
+      { _id: id },
+      updateUserDto,
+    );
   }
 
   async deleteUser(id: string): Promise<any> {
