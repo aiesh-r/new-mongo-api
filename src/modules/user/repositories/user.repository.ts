@@ -39,12 +39,12 @@ export class UserRepository extends BaseAbstractRepository<User> {
   //   return await this.userModel.findOne(filterQuery);
   // }
 
-  // async findOneAndUpdate(
-  //   filterQuery: FilterQuery<User>,
-  //   user: Partial<User>,
-  // ): Promise<User> {
-  //   return await this.userModel.findOneAndUpdate(filterQuery, user);
-  // }
+  async findOneAndUpdate(
+    filterQuery: FilterQuery<User>,
+    user: Partial<User>,
+  ): Promise<User> {
+    return await this.userModel.findOneAndUpdate(filterQuery, user);
+  }
 
   // async deleteUser(id: string): Promise<any> {
   //   return await this.userModel.deleteOne({ _id: id });
