@@ -22,6 +22,7 @@ export class UserRepository {
     try {
       const createdUser = await newUser.save();
       console.log('user', createdUser);
+      console.log('Test', createdUser);
       return createdUser;
     } catch (error) {
       throw new InternalServerErrorException(error);
